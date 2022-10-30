@@ -1,7 +1,6 @@
 package com.redsxi;
 
 import com.redsxi.annotations.StaticByteArrayLength;
-import com.sun.tools.javac.util.Convert;
 
 import java.lang.reflect.InvocationTargetException;
 import java.nio.BufferOverflowException;
@@ -48,12 +47,12 @@ public class CbaaArray extends VariableCbaaObjBase<List<? super ConvertByteArray
                                         .getClass()
                                         .getTypeParameters()[0]
                                         .getBounds()[
-                                                obj
-                                                        .getClass()
-                                                        .getTypeParameters()[0]
-                                                        .getBounds()
-                                                        .length
-                                                        ]
+                                            obj
+                                                    .getClass()
+                                                    .getTypeParameters()[0]
+                                                    .getBounds()
+                                                    .length
+                                            ]
                 )
                         .getConstructor(byte[].class)
                         .newInstance(single);
