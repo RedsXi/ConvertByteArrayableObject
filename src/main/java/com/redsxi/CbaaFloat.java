@@ -5,7 +5,7 @@ import com.redsxi.annotations.StaticByteArrayLength;
 @StaticByteArrayLength(4)
 public class CbaaFloat extends VariableCbaaObjBase<Float> {
     @Override
-    public byte[] toByteArray() throws RuntimeException {
+    public byte[] toByteArray() {
         byte[] res = super.toByteArray();
 
         int obj = Float.floatToIntBits(this.obj);

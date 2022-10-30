@@ -18,7 +18,7 @@ public class VariableCbaaObjBase<V> extends ConvertByteArrayAbleObject<VariableC
     }
 
     @Override
-    public byte[] toByteArray() throws RuntimeException{
+    public byte[] toByteArray() {
         byte[] res = super.initialByteArrayIfStaticLength();
 
         if(res == null) throw new RuntimeException();

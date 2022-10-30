@@ -9,7 +9,7 @@ public abstract class CbaaStructure extends ConvertByteArrayAbleObject<CbaaStruc
     public abstract Class<? extends ConvertByteArrayAbleObject<?>>[] getStructureClasses();
 
     @Override
-    public byte[] toByteArray() throws RuntimeException {
+    public byte[] toByteArray() {
         byte[] result = new byte[length()];
 
         int offset = 0;

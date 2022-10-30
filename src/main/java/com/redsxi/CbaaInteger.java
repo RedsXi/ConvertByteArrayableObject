@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 @StaticByteArrayLength(4)
 public class CbaaInteger extends VariableCbaaObjBase<Integer> {
     @Override
-    public byte[] toByteArray() throws RuntimeException {
+    public byte[] toByteArray() {
         ByteBuffer buffer = ByteBuffer.allocate(Integer.BYTES);
         buffer.putInt(obj);
         buffer.flip();
