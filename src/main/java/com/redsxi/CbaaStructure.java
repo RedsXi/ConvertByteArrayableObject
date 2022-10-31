@@ -2,6 +2,7 @@ package com.redsxi;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 
 public abstract class CbaaStructure extends ConvertByteArrayAbleObject<CbaaStructure> {
     public ConvertByteArrayAbleObject<?>[] obj_s;
@@ -64,5 +65,14 @@ public abstract class CbaaStructure extends ConvertByteArrayAbleObject<CbaaStruc
         }
 
         return length;
+    }
+
+    @Override
+    public String toString() {
+        String[] r = new String[obj_s.length];
+        for(int i = 0;i < obj_s.length;i++) {
+            r[i] = obj_s[i].getClass().getName()+":"+obj_s[i].toString();
+        }
+        return "Structure{"+String.join(",", r)+"}";
     }
 }
