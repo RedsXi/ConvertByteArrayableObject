@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CbaaArray extends VariableCbaaObjBase<List<? super ConvertByteArrayAbleObject<?>>> {
+public abstract class CbaaArray extends VariableCbaaObjBase<List<? super ConvertByteArrayAbleObject<?>>> {
 
     private static long LIMIT_LENGTH = Integer.MAX_VALUE;
     @Override
@@ -41,19 +41,7 @@ public class CbaaArray extends VariableCbaaObjBase<List<? super ConvertByteArray
             for(int index = 0;index < length;index++) {
                 single = new byte[buf_without_length.length - offset];
                 System.arraycopy(buf_without_length,offset,single,0,single.length);
-                ConvertByteArrayAbleObject<?> s = (
-                        (Class<? extends ConvertByteArrayAbleObject<?>>)
-                                obj
-                                        .getClass()
-                                        .getTypeParameters()[0]
-                                        .getBounds()[
-                                            obj
-                                                    .getClass()
-                                                    .getTypeParameters()[0]
-                                                    .getBounds()
-                                                    .length
-                                            ]
-                )
+                ConvertByteArrayAbleObject<?> s = getArrayApplierClass()
                         .getConstructor(byte[].class)
                         .newInstance(single);
                 offset += s.length();
@@ -65,4 +53,6 @@ public class CbaaArray extends VariableCbaaObjBase<List<? super ConvertByteArray
             throw new RuntimeException(e);
         }
     }
+
+    public abstract Class<? extends ConvertByteArrayAbleObject<?>> getArrayApplierClass();
 }
