@@ -41,6 +41,8 @@ public abstract class CbaaStructure extends ConvertByteArrayAbleObject<CbaaStruc
             }
         } catch (NoSuchMethodException | InvocationTargetException | InstantiationException | IllegalAccessException e) {
             throw new RuntimeException(e);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new IllegalArgumentException("Please check your structure and data.", e);
         }
     }
 
