@@ -17,4 +17,8 @@ public class CbaaShort extends VariableCbaaObjBase<Short> {
         buffer.flip();
         obj = buffer.getShort();
     }
+
+    public CbaaShort(short v) {
+        obj = v;
+    }
 }

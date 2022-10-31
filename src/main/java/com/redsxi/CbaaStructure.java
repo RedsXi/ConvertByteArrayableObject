@@ -4,7 +4,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 public abstract class CbaaStructure extends ConvertByteArrayAbleObject<CbaaStructure> {
-    ConvertByteArrayAbleObject<?>[] obj_s;
+    public ConvertByteArrayAbleObject<?>[] obj_s;
 
     public abstract Class<? extends ConvertByteArrayAbleObject<?>>[] getStructureClasses();
 
@@ -48,6 +48,11 @@ public abstract class CbaaStructure extends ConvertByteArrayAbleObject<CbaaStruc
 
     public ConvertByteArrayAbleObject<?>[] getAll() {
         return obj_s;
+    }
+
+    public CbaaStructure() {
+        Class<? extends ConvertByteArrayAbleObject<?>>[] classes = getStructureClasses();
+        obj_s = new ConvertByteArrayAbleObject[classes.length];
     }
 
     @Override

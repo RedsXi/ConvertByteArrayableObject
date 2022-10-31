@@ -17,4 +17,8 @@ public class CbaaChar extends VariableCbaaObjBase<Character> {
         buffer.flip();
         obj = buffer.getChar();
     }
+
+    public CbaaChar(char v) {
+        obj = v;
+    }
 }

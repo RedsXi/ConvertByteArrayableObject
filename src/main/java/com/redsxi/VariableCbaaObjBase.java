@@ -30,10 +30,6 @@ public class VariableCbaaObjBase<V> extends ConvertByteArrayAbleObject<VariableC
         return obj;
     }
 
-    public static <FV> VariableCbaaObjBase<FV> as(FV o) {
-        return new VariableCbaaObjBase<>(o);
-    }
-
     @Override
     public int length() {
         StaticByteArrayLength a = this.getClass().getAnnotation(StaticByteArrayLength.class);

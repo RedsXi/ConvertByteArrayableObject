@@ -15,6 +15,10 @@ public class CbaaDouble extends VariableCbaaObjBase<Double> {
         ByteBuffer buffer = ByteBuffer.allocate(Double.BYTES);
         buffer.put(src);
         buffer.flip();
-        obj = buffer.getDouble();Boolean l;
+        obj = buffer.getDouble();
+    }
+
+    public CbaaDouble(double v) {
+        obj = v;
     }
 }

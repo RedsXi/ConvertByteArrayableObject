@@ -20,4 +20,8 @@ public class CbaaLong extends VariableCbaaObjBase<Long> {
         buffer.flip();
         obj = buffer.getLong();
     }
+
+    public CbaaLong(long v) {
+        obj = v;
+    }
 }

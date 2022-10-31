@@ -20,4 +20,8 @@ public class CbaaFloat extends VariableCbaaObjBase<Float> {
         buffer.flip();
         obj = buffer.getFloat();
     }
+
+    public CbaaFloat(float v) {
+        obj = v;
+    }
 }

@@ -22,4 +22,8 @@ public class CbaaBoolean extends VariableCbaaObjBase<Boolean> {
     public CbaaBoolean(byte[] src) {
         obj = byteToBool(new CbaaByte(src).get());
     }
+
+    public CbaaBoolean(boolean v) {
+        obj = v;
+    }
 }

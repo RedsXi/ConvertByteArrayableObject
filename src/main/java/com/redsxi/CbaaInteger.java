@@ -21,4 +21,8 @@ public class CbaaInteger extends VariableCbaaObjBase<Integer> {
         buffer.flip();
         obj = buffer.getInt();
     }
+
+    public CbaaInteger(int v) {
+        obj = v;
+    }
 }

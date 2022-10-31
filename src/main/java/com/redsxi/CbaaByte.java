@@ -12,4 +12,8 @@ public class CbaaByte extends VariableCbaaObjBase<Byte> {
         if(src.length < 1) throw new RuntimeException("Array's length should be bigger than 0, but got 0");
         obj = src[0];
     }
+
+    public CbaaByte(byte v) {
+        obj = v;
+    }
 }
